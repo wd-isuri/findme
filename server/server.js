@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import connectDB from './config/db.js';
 import itemRoutes from './routes/itemRoutes.js';
-
+import authRoutes from './routes/authRoutes.js';
 
 
 
@@ -24,6 +24,7 @@ app.use('/uploads',express.static('uploads'));
 
 // Routes
 app.use('/api/items', itemRoutes);
+app.use('/api/auth', authRoutes);
 
 
 // Test route to check if server is working
