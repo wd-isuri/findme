@@ -1,0 +1,10 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-campus-50: #f0fdfa;
+  --color-campus-100: #ccfbf1;
+  --color-campus-500: #14b8a6;
+  --color-campus-700: #0f766e;
+  --color-campus-900: #134e4a;
+}
