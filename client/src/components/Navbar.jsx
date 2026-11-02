@@ -5,11 +5,11 @@ import logoImg from '../assets/logo.png'
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-xs">
+    <header className="sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b border-[#EAE5DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Real Logo & Campus Tag */}
+          {/* Logo & Campus Tag */}
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2.5 group">
               <img
@@ -19,18 +19,18 @@ export default function Navbar() {
               />
             </Link>
 
-            <span className="hidden sm:inline-flex items-center gap-1 text-xs font-medium bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full border border-purple-200">
-              <MapPin className="w-3 h-3 text-purple-600" /> Campus & Hostels
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-[#E8F1F2] text-[#0C4E55] px-3 py-1 rounded-full border border-[#C5DFE2]">
+              <MapPin className="w-3.5 h-3.5 text-[#0C4E55]" /> Campus & Hostels
             </span>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors ${
-                  isActive ? 'text-purple-600 font-semibold' : 'text-gray-600 hover:text-gray-900'
+                  isActive ? 'text-[#0C4E55] font-bold' : 'text-slate-600 hover:text-[#0C4E55]'
                 }`
               }
             >
@@ -40,7 +40,7 @@ export default function Navbar() {
               to="/items"
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors ${
-                  isActive ? 'text-purple-600 font-semibold' : 'text-gray-600 hover:text-gray-900'
+                  isActive ? 'text-[#0C4E55] font-bold' : 'text-slate-600 hover:text-[#0C4E55]'
                 }`
               }
             >
@@ -52,7 +52,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/items"
-              className="p-2 text-gray-500 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition"
+              className="p-2 text-slate-600 hover:text-[#0C4E55] hover:bg-[#E8F1F2] rounded-xl transition"
               title="Search items"
             >
               <Search className="w-5 h-5" />
@@ -60,7 +60,7 @@ export default function Navbar() {
 
             <Link
               to="/report"
-              className="hidden sm:inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium px-4 py-2 rounded-xl shadow-md shadow-purple-600/20 transition active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#0C4E55] hover:bg-[#07353A] text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-[#0C4E55]/20 transition active:scale-95"
             >
               <PlusCircle className="w-4 h-4" />
               <span>Report Item</span>
@@ -68,7 +68,7 @@ export default function Navbar() {
 
             <Link
               to="/profile"
-              className="p-2 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition"
+              className="p-2 text-slate-600 hover:text-[#0C4E55] hover:bg-[#E8F1F2] rounded-xl transition"
               title="User Account"
             >
               <User className="w-5 h-5" />
