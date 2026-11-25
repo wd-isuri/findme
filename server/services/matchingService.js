@@ -73,14 +73,42 @@ export const findAIMatches = async (item) => {
         Return an empty array if no items match.
     `;
 
-    const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash-lite",
-        contents: prompt,
-        config: {
-            responseMimeType: "application/json",
-        },
-    });
+    // AI Model Fallback
+const models = [
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-3.5-flash",
+];
 
+let response;
+
+for (const model of models) {
+    try {
+        response = await ai.models.generateContent({
+            model,
+            contents: prompt,
+            config: {
+                responseMimeType: "application/json",
+            },
+        });
+
+        console.log(`AI matching successful: ${model}`);
+        break;
+
+    } catch (error) {
+        const status = Number(error.status ?? error.code);
+
+        console.warn(`Model ${model} failed: ${status}`);
+
+        if (![429, 503].includes(status)) {
+            throw error;
+        }
+    }
+}
+
+if (!response) {
+    throw new Error("All AI models are currently unavailable");
+}
     const matches = JSON.parse(response.text);
 
     if (!Array.isArray(matches)) {
