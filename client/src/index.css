@@ -7,4 +7,62 @@
   --color-campus-500: #14b8a6;
   --color-campus-700: #0f766e;
   --color-campus-900: #134e4a;
+} 
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes radarWave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmerGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 4.5s ease-in-out infinite;
+}
+
+.animate-radar-1 {
+  animation: radarWave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-radar-2 {
+  animation: radarWave 3s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.5s;
+}
+
+.animate-shimmer {
+  animation: shimmerGlow 2.5s infinite;
 }

@@ -22,9 +22,15 @@ const itemSchema = new mongoose.Schema(
             enum:['LOST','FOUND'],
             uppercase: true, 
         },
-        location:{
-            type:String,
-            required:[true,'Please enter the location where the item was lost or found'],
+        // Item Date
+        dateLost: {
+        type: Date,
+        default: null,
+        },
+        
+        location: {
+        type: String,
+        required: [true, "Please enter the location where the item was lost or found"],
         },
         imageUrl: {
             type: String,
